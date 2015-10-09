@@ -1,0 +1,121 @@
+<html>
+<head>
+<style>       
+::selection {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6);
+}
+        
+a {
+    color: #343434;
+    text-decoration: none;
+    border-bottom: 1px solid #c3c3c3;
+    -webkit-transition-duration: 1s;
+}  
+        
+a:hover {
+    border-bottom: 1px solid #6f6f6f;
+}  
+
+#download {
+    text-decoration: none;
+    color: black;
+    width: 150px;
+    height: 47px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.0);
+    border-radius: 4px;
+    font-size: 20px;
+    position: fixed;
+    right: 70px;
+    margin-top:50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 47px; 
+}
+        
+.big {
+    font-size: 35px;
+    font-weight: 400;
+    padding-left: 70px;
+    padding-top: 50px;
+}
+        
+.small {
+    line-height: 1.2;
+    font-weight: 300;
+    padding-left: 70px;
+    padding-right: 10px;
+    font-size: 25px;
+    color: grey; 
+}
+            
+body { 
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    background: url(joback.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;    
+} 
+        
+img {
+    padding-left: 70px;
+    padding-top: 20px;    
+}
+        
+iframe {
+    padding-left: 70px;
+    padding-top: 30px;  
+}
+</style>
+</head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+        <script>
+        $(document).ready(function(){
+            $(document).scroll(function() {
+                var alpha = Math.min(0.4 * $(this).scrollTop() / 210, 1);
+                $('body').css({"background-image":"-webkit-linear-gradient(top, rgba(255,255,255,"+alpha+") 0%,                         rgba(255,255,255," + alpha + ") 100%), url(joback.png)"});
+            });
+            $("img").click(function(){
+                switch ($(this).attr('id')) {
+                    case "i1":
+                        $("#i1").css('display', 'none'); 
+                        $("#i2").css('display', 'block'); 
+                        break;
+                    case "i2":
+                        $("#i2").css('display', 'none'); 
+                        $("#i3").css('display', 'block');  
+                        break;
+                    case "i3":
+                        $("#i3").css('display', 'none'); 
+                        $("#i1").css('display', 'block'); 
+                        break;
+                }            
+            });
+        });
+        </script>
+        <a href="BlurLikeJony.mpkg.zip" id="download">Download</a>
+        <div style="color:grey; right: 80px; margin-top:120px;position:fixed;">    
+        Mac OS, CC 2015
+            </div>
+      <div style="width:550px;">
+        <h1 class="big">Blur Like Jony</h1>
+        <p class="small">Blur Like Jony is  Photoshop filter plug-in that makes the blur in the same way as Apple does in the current iOS.</p>
+        <p class="small">So, the plug-in has three modes, such as in UIVisualEffectView: Dark, Light, Extra Light
+   </p>
+          <a style="border-bottom:none;" href="#!">    
+                <img id="i1" src="img1.png"> 
+                <img id="i2" style="display: none;" src="img2.png"> 
+                <img id="i3" style="display: none;" src="img3.png">       
+              </a>  
+          
+          <iframe  src="https://player.vimeo.com/video/141902226" width="482" height="370" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+        </div>
+           <p class="small" style="padding-top: 40px; line-height: 1.4;"> If you like this plug-in, check also<br> <a href="http://bg-d.net/browserpreview">Browser Preview</a> and <a href="http://bg-d.net/htmlblock">HTML Block</a> or <a href="http://bg-d.net/dockpuppet">Dock Puppet</a></p>
+          <p class="small" style="font-size:25px;line-height: 1.4;">Contact mail <a href="mailto:hello@bg-d.net">hello@bg-d.net</a></p>
+        
+    </body>
+</html>
