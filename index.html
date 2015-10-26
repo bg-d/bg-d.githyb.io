@@ -1,5 +1,6 @@
 <html>
 <style>
+    
 body {
     -webkit-font-smoothing: antialiased;
     padding: 70px;
@@ -11,25 +12,120 @@ body {
 }
 
 p {
-    line-height: 0.5;
+   
+    margin-bottom: -22px;
     font-size: 30px;
     font-family: Helvetica;
 }
 
 a {
-    line-height: 1.5;
+    
     color: #343434;
     text-decoration: none;
     border-bottom: 2px solid #bfbfbf;
 }
+    
+.row {
+  width: 100%;
+  font-size: 24px;
+  font-family: Helvetica;    
+  margin: 70px auto;
+  margin-left: -40px;
+}
+    
+.block {
+  margin-bottom: 80px;
+  width: 250px;
+  float: center;
+  display: inline-block;
+  zoom: 1;
+} 
+    
+#spin {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 9s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-out; zoom: 1;    
+}
+  
+#bounce {
+    -webkit-animation-name: bounce;
+    -webkit-animation-duration: .8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-out; 
+}
+   
+#bleft {
+    -webkit-animation-name: bleft;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-out;
+}
+    
+#bright {
+    -webkit-animation-name: bright;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-out;
+}
+    
+#jblur {
+    -webkit-animation-name: jblur;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;"   
+}
+    
+    
+@-webkit-keyframes spin { 
+    0% { -webkit-transform: rotate(0deg); }
+    50% { -webkit-transform: rotate(180deg); }
+    75% { -webkit-transform: rotate(20deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+    
+    
+@-webkit-keyframes bounce {
+	  0% { -webkit-transform: translateY(1px); }
+	100% { -webkit-transform: translateY(-10px); }
+}
+    
+@-webkit-keyframes bleft {
+	  0% { -webkit-transform: translateX(5); }
+	100% { -webkit-transform: translateX(-12px); }
+}  
+    
+@-webkit-keyframes bright {
+	  0% { -webkit-transform: translateX(5); }
+	100% { -webkit-transform: translateX(12px); }
+}     
+    
+@-webkit-keyframes jblur {
+	  0% { -webkit-filter: none; -webkit-transform: scale(1); }
+     50% {-webkit-filter: blur(8px); -webkit-transform: scale(1.1);  }
+	 100% { -webkit-filter: none; -webkit-transform: scale(1); }
+}    
+    
+
 </style>
 <body>
 <img src="ps-flag.png" /><br><br><br>
 <p>Contemporary design solutions for Mac OS, iOS, Web.</p>
-<p>Available for new projects.</p>
-<br>
-<p>Portfolio by request <a href="mailto:hello@bg-d.net">hello@bg-d.net</a></p>
-
+<p>Available for new projects. Portfolio by request <a href="mailto:hello@bg-d.net">hello@bg-d.net</a></p>
+<br><br><br><br><br>
+<p style="color:#bfbfbf;">By the way, check my experimental development projects</p>
+<div class="row">
+  <div class="block"><center><img id="jblur" src="item1.png" /><br><br><a href="http://bg-d.net/jony">Blur Like Jony</a></center></div>
+  <div class="block"><center><img id="bleft" src="q1.png" /><img id="bright" src="q2.png" /><br><br><a href="http://bg-d.net/htmlblock">HTML Block</a></center></div>
+  
+<div class="block"><center><img id="spin" src="item3.png" /><br><br><a href="http://bg-d.net/browserpreview">Browser Preview</a></center></div>
+    
+<div class="block"><center><img id="bounce" src="item4.png" /><br><br><a href="http://bg-d.net//dockpuppet">Dock Puppet</a></center></div>    
+</div>
+ 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
