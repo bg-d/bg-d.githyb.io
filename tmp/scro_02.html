@@ -1,0 +1,173 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-git.js"></script>
+
+  
+
+
+  <style type="text/css">
+    body {
+    padding-top: 51px;
+    background: #fafafa;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15); 
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left:0;
+    transition: top 0.3s;
+    width: 100%;
+}
+
+.nav-up {
+    top: -51px;
+}
+
+main {
+background: #fafafa;
+
+    height: 2000px;
+}
+
+footer { background: #ddd;}
+* { color: transparent}
+
+    
+.navbar-line {
+height: 0px;
+background: url(https://app.sympli.io/img/nav-top-border.svg);
+  /*  background:blue; */
+background-position: 0 0;
+position: fixed;
+left: 0;
+right: 0;
+top: 0px;
+z-index: 9999;  
+-webkit-filter: blur(0px);
+animation: woo 0.4s, loadAnimtion 2.5s linear infinite;
+animation-fill-mode: forwards;
+}
+   
+      
+@keyframes woo { 
+    from {height: 0;}
+    to {height: 2px;}
+    
+}
+     
+      
+@keyframes loadAnimtion {      
+0% {
+    background-position: 0 0;
+   /* background:blue; */
+}
+100% {
+    background-position: 1033px 0;
+    /* background: red; */
+}     
+}
+      
+      
+
+  </style>
+
+  <title>Hide header on scroll down, show on scroll up by mariusc23</title>
+
+
+
+
+
+<script type="text/javascript">//<![CDATA[
+$(function(){
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+    
+    
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        var ll =  st;// + $(window).height();
+        //console.log("---" +ll + "---" +$(document).height());
+        // Scroll Up
+        if(ll < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+});//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+    
+<div id="navbar-line" class="navbar-line navbar-line-animation"></div>
+<header class="nav-down">
+<img src="t1.png" style="padding-left:-2px; padding-top: 6px;">
+<img src="t2.png" style="float:right; padding-right:8px; padding-top: 13px;">
+ 
+</header>
+    
+ 
+    
+    
+<main>
+    <center>
+  <img src="body_01.png">
+        
+        </center>
+
+</main>
+<footer>
+    This is your footer.
+</footer>
+  
+
+
+
+
+</body></html>
