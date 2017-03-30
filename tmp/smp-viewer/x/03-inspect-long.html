@@ -7,17 +7,6 @@
   -webkit-font-smoothing: antialiased;
   font-family: '.SFNSText-Regular', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;  
 }
-    
-    #tooltip {
-    position: fixed;
-    background-color: rgba(0,0,0,0.55);
-    color: white;
-    padding: 2px;
-    opacity: 0;
-    -webkit-border-radius: 4px;    
-    border-radius: 4px;
-
-}
 
 #topx {
   position:fixed;
@@ -29,19 +18,6 @@
   box-shadow:  0 1px 0 0 rgba(0,0,0,0.15);
 }
 
- 
-.comm {
-    opacity: 0;
-    cursor: pointer;
-    animation: comshow 0.2s ease-in-out forwards ;
-    
-}
-    
-@keyframes comshow {
-    0% {opacity:0; transform: scale(0.5);}
-    100% {opacity: 1; transform: scale(1)}
-    
-}
     
 #ricons {
   width: 306px;
@@ -59,7 +35,6 @@
 }
 
     
-    
 a {
   color:#868686;
   transition: all 0.3s ease-in-out;
@@ -70,15 +45,10 @@ a {
 a:hover {
   color: #45494F;
 }        
-        
     
     
 #backlink {    
-    
 
-    
-    
-    
    font-size: 14px;
   color:#868686;
   transition: all 0.3s ease-in-out;
@@ -93,7 +63,7 @@ a:hover {
     
 #b1 {
     
-    max-width:160px;
+    width:160px;
      
           overflow: hidden;
       white-space: nowrap;
@@ -108,16 +78,21 @@ a:hover {
 }
 
 #b1:hover {
+
   color: #45494F;
+ 
+    width:auto;
+    text-overflow: inherit;
+   
 }
 
 #b2 { 
-    max-width:160px; 
+    width:160px; 
     
     
           overflow: hidden;
       white-space: nowrap;
-      text-overflow: ellipsis;
+      text-overflow: ellipsis;    
     
     
       display: inline-block;
@@ -125,6 +100,16 @@ a:hover {
     cursor: pointer;
   font-size: 14px;
   color: #45494F;
+}
+    
+  
+   
+    
+    
+#b2:hover {
+
+  width:auto;
+    text-overflow: inherit;
 }
     
     
@@ -227,20 +212,11 @@ width: 32px;
    height:100%;
    background: white url(rightcolumntest.png) no-repeat;
 }
-    
-#review-comments {
-  box-shadow: -1px 0 0 0 rgba(0,0,0,0.15);  
-   top: 51px;
-   position: fixed;
-   width: 290px;
-   right: 0;
-   height:100%;
-   background: white url(review_comments.png) no-repeat;
-}        
+
     
 #bitmap {
 
- cursor:crosshair;
+ 
    position: fixed;
    width: 407px;
    height: 686px;
@@ -267,24 +243,23 @@ width: 32px;
 
 <div id="b1">
     <a id="backlink" href="02-designs.html">
-My iPhone Application</a>
+My iPhone Application with some important name</a>
 </div>
     
-     <div id="arright"> </div>
+<div id="arright"> </div>
     
 <div id="b2">
-New States screen with arrows
+New States for bug fixing for rdar://31322357
 </div>
     
-    <div id="arghhh"> </div>
-    
+<div id="arghhh"> </div>    
 </div>
     
     
-<div id="center-wrapper" style="background: white; position:absolute; left:44%;">    
+<div id="center-wrapper" style="position:absolute; left:44%;">    
     
-<div id="w1" style="color: #868686; font-size: 14px; position:relative; top:15px; display:inline-block;"><a href="03-inspect.html">Design</a></div>    
-<div id="w2" style="color: #45494F; margin-left: 20px; font-size: 14px; position:relative; top:15px; display:inline-block;       border-bottom: 2px solid #45494F;     padding-bottom: 16px; ">Review</div>   
+<div id="w1" style="color: #45494F; font-size: 14px; position:relative; top:15px; display:inline-block;      border-bottom: 2px solid #45494F;     padding-bottom: 16px; ">Design</div>    
+<div id="w2" style="color: #868686; padding-left: 20px; font-size: 14px; position:relative; top:15px; display:inline-block;"><a href="04-review.html">Review</a></div>   
 <div id="w2" style="color: #868686; padding-left: 20px; font-size: 14px; position:relative; top:15px; display:inline-block;"><a href="05-changes.html">Changes</a></div>  
     
     
@@ -294,34 +269,20 @@ New States screen with arrows
     
 </div>
 
+    
+<div style="width:61px; height:228px; top:15%; position:fixed; left: 20px; background: url(left-contols.png) no-repeat;"> </div>
+<div style="width:131px; height:32px; top:95%; position:fixed; left: 16px; background: url(bottom-ctrl.png) no-repeat;"> </div>
+<div style="width:51px; height:28px; top:95%; position:fixed; right: 320px; background: url(pagination.png) no-repeat;"> </div>
 
-
     
     
-<div id="bitmap"> <div class="comm" style="font-size:12px; border-radius:50%; text-align: center; width:20px; height: 20px; background-color: #EB4329; color:white; position: relative; top:50%; left:50%; border: solid 2px white; box-shadow:  0 1px 2px 0 rgba(0,0,0,0.3);   line-height: 20px;">1</div>
+<div id="bitmap"> </div>
     
-<div class="comm" style="font-size:12px; border-radius:50%; text-align: center; width:20px; height: 20px; background-color: #EB4329; color:white; position: relative; top:25%; left:10%; border: solid 2px white; box-shadow:  0 1px 2px 0 rgba(0,0,0,0.3);   line-height: 20px;">2</div>     
-    
-    
-    </div>
-  
-    
-<div style="width:51px; height:28px; top:50%; position:fixed; right: 275px; background: url(next-screen.png) no-repeat;"> </div>
-<div style="width:51px; height:28px; top:50%; position:fixed; left: 20px; background: url(prev-screen.png) no-repeat;"> </div>
-       
-    
-    
-<div id="review-comments"> </div>
+<div id="rightcolumn"> </div>
 
 <div id="thumbs-panel">
 &nbsp;
-</div>  
-    
-<a href="07-full-view.html"><div style="width:61px; height:228px; top:15%; position:fixed; left: 20px; background: url(small-c.png) no-repeat;"> </div>    </a>
-    
-    
-<div id="tooltip" style="font-size:12px; padding:5px;">Click to add new comment</div>    
-    
+</div>    
 </body>
 
     
@@ -526,41 +487,10 @@ var generateLoremIpsum = function(len) {
     return extracted && extracted[0].toUpperCase() + extracted.slice(1);
 };
     
-$(function() {
-
-    
-     $("#bitmap").bind('mouseout', function(event) {
-       $('#tooltip').css({
-                opacity:0
-            });  
-         
-     });
-    
-         $(".comm").bind('mousemove', function(event) {
-             event.stopPropagation();
-       $('#tooltip').css({
-                opacity:0
-            });  
-         
-     });
-    
-    
-        $("#bitmap, #tooltip").bind('mousemove', function(event) {
-         
-            $('#tooltip').css({
-                
-                opacity:1,
-                top: event.pageY - $('#tooltip').height() + 23,
-                left: event.pageX
-            });
-        });
-    });
-    
-    
     
 $(document).ready(function() {
-    $("#backlink").html(generateLoremIpsum(Math.floor(Math.random() * 5) + 1));
-    $("#b2").html(generateLoremIpsum(Math.floor(Math.random() * 5) + 1));    
+    //$("#backlink").html(generateLoremIpsum(Math.floor(Math.random() * 5) + 1));
+    //$("#b2").html(generateLoremIpsum(Math.floor(Math.random() * 5) + 1));    
 });    
     
     
