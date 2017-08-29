@@ -1,131 +1,276 @@
 <html>
+<head>
+    <meta content="UI/UX Interface designer" name="description">
+    <meta content="ux design, ui design, freelance designer, interface designer, ux designer, ui designer, user interface design, user experience design, UI/UX, ux, ui, mobile, app, design, website, user experience, enterprise, user interface, mobile design, interactive prototyping, wireframing" name="keywords">
+</head>
 <style>
-    
-body {
-    -webkit-font-smoothing: antialiased;
-    padding: 70px;
+@font-face {
+  font-family: 'Interface';
+  font-style:  normal;
+  font-weight: 400;
+  src: url("font-files/Interface-Regular.woff2?v=1.4") format("woff2"),
+       url("font-files/Interface-Regular.woff?v=1.4") format("woff");
+}
+@font-face {
+  font-family: 'Interface';
+  font-style:  italic;
+  font-weight: 400;
+  src: url("font-files/Interface-RegularItalic.woff2?v=1.4") format("woff2"),
+       url("font-files/Interface-RegularItalic.woff?v=1.4") format("woff");
 }
 
-::selection {
-    color: #ffffff;
-    background: #454545;
+@font-face {
+  font-family: 'Interface';
+  font-style:  normal;
+  font-weight: 500;
+  src: url("font-files/Interface-Medium.woff2?v=1.4") format("woff2"),
+       url("font-files/Interface-Medium.woff?v=1.4") format("woff");
+}
+@font-face {
+  font-family: 'Interface';
+  font-style:  italic;
+  font-weight: 500;
+  src: url("font-files/Interface-MediumItalic.woff2?v=1.4") format("woff2"),
+       url("font-files/Interface-MediumItalic.woff?v=1.4") format("woff");
 }
 
-p {
-   
-    margin-bottom: -22px;
-    font-size: 30px;
-    font-family: Helvetica;
+@font-face {
+  font-family: 'Interface';
+  font-style:  normal;
+  font-weight: 700;
+  src: url("font-files/Interface-Bold.woff2?v=1.4") format("woff2"),
+       url("font-files/Interface-Bold.woff?v=1.4") format("woff");
 }
-
-a {
-    
-    color: #343434;
-    text-decoration: none;
-    border-bottom: 2px solid #bfbfbf;
+@font-face {
+  font-family: 'Interface';
+  font-style:  italic;
+  font-weight: 700;
+  src: url("font-files/Interface-BoldItalic.woff2?v=1.4") format("woff2"),
+       url("font-files/Interface-BoldItalic.woff?v=1.4") format("woff");
 }
+    ::selection {
+        color: #ffffff;
+        background: #454545;
+    }
     
-.row {
-  width: 100%;
-  font-size: 24px;
-  font-family: Helvetica;    
-  margin: 70px auto;
-  margin-left: -40px;
-}
+    body {
+        margin: 0;
+        font-family: Interface, "Helvetica", Arial;
+        -webkit-font-smoothing: antialiased;
+    }
     
-.block {
-  margin-bottom: 80px;
-  width: 250px;
-  float: center;
-  display: inline-block;
-  zoom: 1;
-} 
+    a {
+        color: #343434;
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #7B7D85;
+    }
     
-#spin {
-    -webkit-animation-name: spin;
-    -webkit-animation-duration: 9s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-out; zoom: 1;    
-}
-  
-#bounce {
-    -webkit-animation-name: bounce;
-    -webkit-animation-duration: .8s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -webkit-animation-timing-function: ease-out; 
-}
-   
-#bleft {
-    -webkit-animation-name: bleft;
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -webkit-animation-timing-function: ease-out;
-}
+    .asilence {
+        color: #7B7D85;
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #D8D8D8;
+    }
     
-#bright {
-    -webkit-animation-name: bright;
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -webkit-animation-timing-function: ease-out;
-}
+    h1 {
+        padding-left: 7%;
+        padding-right: 7%;
+        font-weight: normal;
+        font-size: 40px;
+        color: #21222A;
+        letter-spacing: 0;
+        line-height: 50px;
+        padding-top: 100px;
+        padding-bottom: 20px;
+    }
     
-#jblur {
-    -webkit-animation-name: jblur;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;"   
-}
+    .info {
+        padding-left: 7%;
+        padding-right: 7%;
+        max-width: 700px;
+        font-size: 22px;
+        color: #7B7D85;
+        letter-spacing: 0;
+        line-height: 32px;
+    }
     
+    .project {
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        max-width: 73%;
+        font-size: 22px;
+        color: #7B7D85;
+        letter-spacing: 0;
+        line-height: 32px;
+    }
     
-@-webkit-keyframes spin { 
-    0% { -webkit-transform: rotate(0deg); }
-    50% { -webkit-transform: rotate(180deg); }
-    75% { -webkit-transform: rotate(20deg); }
-    100% { -webkit-transform: rotate(360deg); }
-}
+    img {
+        image-rendering: optimizeQuality;
+    }
     
+    .simg {
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-bottom: 30px;
+        max-width: 85%;
+        min-width: 85%;
+    }
     
-@-webkit-keyframes bounce {
-	  0% { -webkit-transform: translateY(1px); }
-	100% { -webkit-transform: translateY(-10px); }
-}
+    #arrow {
+        width: 19px;
+        animation: arrow .9s linear alternate infinite;
+    }
     
-@-webkit-keyframes bleft {
-	  0% { -webkit-transform: translateX(5); }
-	100% { -webkit-transform: translateX(-12px); }
-}  
-    
-@-webkit-keyframes bright {
-	  0% { -webkit-transform: translateX(5); }
-	100% { -webkit-transform: translateX(12px); }
-}     
-    
-@-webkit-keyframes jblur {
-	  0% { -webkit-filter: none; -webkit-transform: scale(1); }
-     50% {-webkit-filter: blur(8px); -webkit-transform: scale(1.1);  }
-	 100% { -webkit-filter: none; -webkit-transform: scale(1); }
-}    
-    
-
+    @keyframes arrow {
+        0% {
+            transform: translate3d(5px, 0px, 0) scale3d(1, 1, 1);
+        }
+        100% {
+            transform: translate3d(5px, 5px, 0) scale3d(1.09, 0.8, 1);
+        }
+    }
 </style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="fluffy.min.js"></script>
+<link rel="stylesheet" type="text/css" href="fluffy.min.css" />
+<script>
+    $(function() {
+        var $images = $("img[data-1x]");
+        if (window.devicePixelRatio == 2) {
+            $.each($images, function() {
+                var $this = $(this);
+                $this.attr("src", $this.data("2x"));
+            });
+        } else {
+            $.each($images, function() {
+                var $this = $(this);
+                $this.attr("src", $this.data("1x"));
+            });
+        }
+    });
+</script>
+
 <body>
-<img src="ps-flag.png" /><br><br><br>
-<p>Contemporary design solutions for Mac OS, iOS, Web.</p>
-<p>Available for new projects. Portfolio by request <a href="mailto:hello@bg-d.net">hello@bg-d.net</a></p>
-<br><br><br><br><br>
-<p style="color:#bfbfbf;">By the way, check my experimental development projects</p>
-<div class="row">
-  <div class="block"><center><img id="jblur" src="item1.png" /><br><br><a href="http://bg-d.net/jony">Blur Like Jony</a></center></div>
-  <div class="block"><center><img id="bleft" src="q1.png" /><img id="bright" src="q2.png" /><br><br><a href="http://bg-d.net/htmlblock">HTML Block</a></center></div>
-  
-<div class="block"><center><img id="spin" src="item3.png" /><br><br><a href="http://bg-d.net/browserpreview">Browser Preview</a></center></div>
-    
-<div class="block"><center><img id="bounce" src="item4.png" /><br><br><a href="http://bg-d.net//dockpuppet">Dock Puppet</a></center></div>    
-</div>
- 
+    <div class="welcome">
+        <h1>Hello, my name is Bogdan.<br>
+            I'm interface designer.
+         </h1>
+    </div>
+    <div class="info">
+        I have experience in UX/UI design for mobile, desktop and web. Everything from application flow, wireframing to visual design and interactive prototyping.
+        <br>
+        <br> I'm looking for new projects. I would love to work with you.
+        <br> Contact &mdash; <a href="mailto:hello@bg-d.net">hello@bg-d.net</a>
+        <br>
+        <br>Previously I've worked at
+        <br> 2010 &mdash; 2015 designer at <a class="asilence" href="http://sfcd.com" rel="noreferrer" target="_blank">SFCD</a> agency.
+        <br> 2016 &mdash; 2017 designer at <a class="asilence" href="http://sympli.io" rel="noreferrer" target="_blank">Sympli</a> startup.
+        <br>
+        <br>
+        <br>
+        <span id="s">Check my selected works</span>
+        <svg id="arrow" width="23px" height="13px" viewBox="0 0 23 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g transform="translate(-932.000000, -224.000000)" fill="#7B7D85">
+                <path d="M943.721797,234.161822 L934.140375,224.5804 C933.748153,224.188178 933.121501,224.189526 932.734163,224.576864 C932.344124,224.966903 932.348407,225.593786 932.737698,225.983077 L943.016923,236.262302 L943.018694,236.264068 L943.020459,236.265837 C943.214889,236.460267 943.468172,236.556712 943.721541,236.556325 C943.977492,236.556093 944.230048,236.458925 944.423136,236.265837 L944.424902,236.264067 L944.426671,236.262302 L954.705896,225.983077 C955.098119,225.590854 955.09677,224.964203 954.709432,224.576864 C954.319393,224.186825 953.692511,224.191109 953.30322,224.5804 L943.721797,234.161822 Z" id="Combined-Shape"></path>
+            </g>
+        </svg>
+    </div>
+    <h1>Sympli.io</h1>
+    <img id="s1" class="simg" src="imgs/s_00.png">
+    <div class="project">Sympli is a design handoff service for seamless collaboration between designers and developers. At Sympli I was responsible for the redesign of the service: Web application, Landing page, plugins for Xcode, Android Studio, Sketch and Photoshop. After redesign, I continued to maintain and improve interface design, find out user needs and create design solutions for user problems and business goals.
+        <br>
+        <br>I've created graphics, mockups, interactive prototypes, subtle css animations and oversee implementation of design.
+    </div>
+    <div style="background-color: #F3F4F7; height:640px;" data-fluffy-container data-fluffy-options='{"showScrollbars": true, "mouseDamp": "3"}'>
+        <div style="padding-right:100px;" data-fluffy-content>
+            <img style="height:432px; padding-top: 110px; padding-left: 100px;" src="" data-1x="imgs/s_01.png" data-2x="imgs/s_01@2x.png" />
+            <div style="display: inline-block; width: 356px; height: 330px; overflow: hidden;">
+                <video style="margin: 15px; width: 356px; height: 330px;" preload loop autobuffer autoplay muted>
+                    <source id="mp4" src="imgs/s_a0.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div style="display: inline-block; width: 436px; height: 440px; overflow: hidden;">
+                <video style="margin: 25px;" preload loop autobuffer autoplay muted>
+                    <source id="mp4" src="imgs/s_a2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div style="display:inline-block; width: 480px; height: 312px; overflow: hidden;">
+                <video style="margin: 10px; width: 480px; height: 312px;" preload loop autobuffer autoplay muted>
+                    <source id="mp4" src="imgs/s_a5.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div style="display:inline-block; width: 316px; height: 298px; overflow: hidden;">
+                <video style="margin: 15px;" preload loop autobuffer autoplay muted>
+                    <source id="mp4" src="imgs/s_a3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div style="display:inline-block;  width: 620px; height: 104px;">
+                <video style="margin: 15px;" preload loop autobuffer autoplay muted>
+                    <source id="mp4" src="imgs/s_a4.mp4" type="video/mp4">
+                </video>
+            </div>
+            <img style="padding-top: 110px; padding-left: 100px; height: 417px;" src="" data-1x="imgs/s_plugins.png" data-2x="imgs/s_plugins@2x.png" />
+        </div>
+    </div>
+    <h1>ADP Mobile</h1>
+    <img class="simg" src="imgs/a_00.png">
+    <div class="project">ADP Mobile provides a convenient way to access payroll, time and attendance, benefits and other vital HR information for user. As part of the team, I helped to redesign ADP mobile applications.
+        <br>
+        <br>I've created user experience scenarios, visual design for dashboard, widgets, internals screens. Also,&nbsp;I've created design for web developer community portal.
+    </div>
+    <div style="background-color: #EBE8EC; height:640px; " data-fluffy-container data-fluffy-options='{"smartWidth":false, "showScrollbars": true, "mouseDamp": "3"}'>
+        <div style="padding-right:100px;" data-fluffy-content>
+            <img style="padding-top: 115px; padding-left: 100px; height: 419px;" src="" data-1x="imgs/a_01.png" data-2x="imgs/a_01@2x.png" />
+        </div>
+    </div>
+    <h1>Intelligent Mail Application</h1>
+    <img class="simg" src="imgs/m_00.png">
+    <div class="project">
+        Modern email service for mobile and web, powered by artificial intelligence. Service analyzes emails and using artificial intelligence creates brief contents of the emails, with smart reply and smart actions.
+        <br>
+        <br> I've created visual design with some navigation and interaction principles.
+    </div>
+    <div style="background-color: #F2EDEA; #e8e8e8;  height:740px; " data-fluffy-container data-fluffy-options='{"smartWidth":false, "showScrollbars": true, "mouseDamp": "3"}'>
+        <div style="padding-right:100px;" data-fluffy-content>
+            <img style="image-rendering: optimizeQuality; padding-top: 55px; padding-left: 100px; height: 628px;" src="" data-1x="imgs/m_01.png" data-2x="imgs/m_01@2x.png" />
+        </div>
+    </div>
+    <h1>Apps for Human Capital Management service</h1>
+    <div style="background-color: #F3F4F7;">
+        <img class="simg" style="padding-top:5%; padding-bottom:5%;" src="imgs/h_00.png">
+    </div>
+    <div class="project">
+        <br>This HCM service is built to support key HR funcitons in companies. It covers areas such as users profiles, payroll, time&nbsp;off, tasks, and reports. I've created interface design for web service and mobile application.
+    </div>
+    <div style="background-color:#F6F6F6;  height:540px; " data-fluffy-container data-fluffy-options='{"smartWidth":false, "showScrollbars": true, "mouseDamp": "3"}'>
+        <div style="padding-right:100px;" data-fluffy-content>
+            <img style="padding-top: 55px; padding-left: 100px; height: 430px;" src="" data-1x="imgs/h_01.png" data-2x="imgs/h_01@2x.png" />
+        </div>
+    </div>
+    <div class="project">
+        Design process go through several steps &mdash; from exploration, app flow, wireframing, design and to UI patterns library.
+    </div>
+    <img class="simg" src="imgs/ui.png">
+    <h1>Fontspiration iPhone App</h1>
+    <img id="s1" class="simg" src="imgs/e_00.png">
+    <div class="project">
+        Fontspiration allows to create custom typographic designs using hundreds of fonts and dozens of built-in animations. I've created initial app flow, wireframes, visual design and prototypes.
+    </div>
+    <div style="background-color: #F6F2F6; height:740px; " data-fluffy-container data-fluffy-options='{"smartWidth":false, "showScrollbars": true, "mouseDamp": "3"}'>
+        <div style="padding-right:100px;" data-fluffy-content>
+            <img style="padding-top: 55px; padding-left: 100px; height: 670px;" src="" data-1x="imgs/e_01.png" data-2x="imgs/e_01@2x.png" />
+        </div>
+    </div>
+    <h1>Contact email &mdash; <a href="mailto:hello@bg-d.net">hello@bg-d.net</a></h1>
+    <div class="info"><a class="asilence" href="#" onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0; ">Back on top</a>
+        <br>
+        <br>
+        <br>
+    </div>
+</body>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
@@ -154,4 +299,4 @@ a {
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/32060536" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-</body>
+</html>
