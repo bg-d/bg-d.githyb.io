@@ -1,0 +1,288 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Дизайнер ищет разработчика</title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<style>
+    ::selection {
+        color: #ffffff;
+        background: #454545;
+    }
+    
+    body {
+        margin: 0;
+        font-family: "Roboto", "Helvetica", Arial;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    a {
+        color: #343434;
+        font-weight: 700;
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #7B7D85;
+    }
+    
+    .asilence {
+        color: #7B7D85;
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #D8D8D8;
+    }
+    
+    h1 {
+        font-weight: 700;
+        padding-left: 7%;
+        padding-right: 7%;
+        font-size: 70px;
+        color: #21222A;
+        padding-bottom: 20px;
+    }
+    
+    h2 {
+        padding-left: 7%;
+        padding-right: 7%;
+        font-weight: normal;
+        max-width: 700px;
+        font-size: 26px;
+        color: #7B7D85;
+        letter-spacing: 0;
+        line-height: 32px;
+        padding-top: 100px;
+        padding-bottom: 20px
+    }
+    
+    .info {
+        padding-left: 7%;
+        padding-right: 7%;
+        max-width: 1100px;
+        font-size: 40px;
+        color: #7B7D85;
+        padding-bottom: 150px;
+        line-height: 56px;
+    }
+    
+    .project {
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        max-width: 73%;
+        font-size: 22px;
+        color: #7B7D85;
+        letter-spacing: 0;
+        line-height: 32px;
+    }
+    
+    img {
+        image-rendering: optimizeQuality;
+    }
+    
+    .simg {
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-bottom: 30px;
+        max-width: 55%;
+    }
+    
+    #arrow {
+        width: 19px;
+        animation: arrow .9s linear alternate infinite;
+    }
+    
+    @keyframes arrow {
+        0% {
+            transform: translate3d(5px, 0px, 0) scale3d(1, 1, 1);
+        }
+        100% {
+            transform: translate3d(5px, 5px, 0) scale3d(1.09, 0.8, 1);
+        }
+    }
+    
+    .row {
+        width: 100%;
+        font-size: 22px;
+        padding-left: 4.5%;
+        padding-right: 5%;
+    }
+    
+    .block {
+        margin-bottom: 80px;
+        width: 240px;
+        float: center;
+        display: inline-block;
+        zoom: 1;
+    }
+    
+    #spin {
+        -webkit-animation-name: spin;
+        -webkit-animation-duration: 9s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-out;
+        zoom: 1;
+    }
+    
+    #bounce {
+        -webkit-animation-name: bounce;
+        -webkit-animation-duration: .8s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-timing-function: ease-out;
+    }
+    
+    #bleft {
+        -webkit-animation-name: bleft;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-timing-function: ease-out;
+    }
+    
+    #bright {
+        -webkit-animation-name: bright;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-timing-function: ease-out;
+    }
+    
+    #jblur {
+        -webkit-animation-name: jblur;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        "   
+
+    }
+    
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        50% {
+            -webkit-transform: rotate(180deg);
+        }
+        75% {
+            -webkit-transform: rotate(20deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    
+    @-webkit-keyframes bounce {
+        0% {
+            -webkit-transform: translateY(1px);
+        }
+        100% {
+            -webkit-transform: translateY(-10px);
+        }
+    }
+    
+    @-webkit-keyframes bleft {
+        0% {
+            -webkit-transform: translateX(5);
+        }
+        100% {
+            -webkit-transform: translateX(-12px);
+        }
+    }
+    
+    @-webkit-keyframes bright {
+        0% {
+            -webkit-transform: translateX(5);
+        }
+        100% {
+            -webkit-transform: translateX(12px);
+        }
+    }
+    
+    @-webkit-keyframes jblur {
+        0% {
+            -webkit-filter: none;
+            -webkit-transform: scale(1);
+        }
+        50% {
+            -webkit-filter: blur(8px);
+            -webkit-transform: scale(1.1);
+        }
+        100% {
+            -webkit-filter: none;
+            -webkit-transform: scale(1);
+        }
+    }
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+    $(function() {
+        var $images = $("img[data-1x]");
+        if (window.devicePixelRatio == 2) {
+            $.each($images, function() {
+                var $this = $(this);
+                $this.attr("src", $this.data("2x"));
+            });
+        } else {
+            $.each($images, function() {
+                var $this = $(this);
+                $this.attr("src", $this.data("1x"));
+            });
+        }
+    });
+</script>
+
+<body>
+    <div class="welcome">
+        <img style="padding-left:7%; padding-right:7%; padding-top: 100px;" height=150px src="love.png">
+        <h1>Дизайнер ищет разработчика.
+         </h1>
+    </div>
+    <div class="info">
+        Привет. Я занимаюсь дизайном интерфейсов для веба и мобильных приложений.
+        <br>
+        <br>Я ищу iOS разработчика, которому было бы интересно попробовать развить собственную компанию по разработке мобильных приложений в полном цикле &mdash; это анализ бизнес требований, проектирование, дизайн, девелопмент.
+        <br>
+        <br> Если кажется интересным, то напишите мне на почту <a href="mailto:hello@bg-d.net">hello@bg-d.net</a>
+        <br>
+        <br>Буду рад любым идеям и обратной связи.
+        <br>Спасибо.
+    </div>
+</body>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter45818727 = new Ya.Metrika({
+                    id: 45818727,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true
+                });
+            } catch (e) {}
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function() {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/45818727" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
+</html>
