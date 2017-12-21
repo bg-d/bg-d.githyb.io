@@ -250,6 +250,16 @@
 <link rel="stylesheet" type="text/css" href="fluffy.min.css" />
 <script>
     $(function() {
+        
+        //safari 11 autoplay video
+        setTimeout(function() {
+            $("#v1")[0].play();
+            $("#v2")[0].play();
+            $("#v3")[0].play();
+            $("#v4")[0].play();
+            $("#v5")[0].play();
+        }, 50);
+          
         var $images = $("img[data-1x]");
         if (window.devicePixelRatio == 2) {
             $.each($images, function() {
@@ -300,27 +310,27 @@
         <div style="padding-right:100px;" data-fluffy-content>
             <img style="height:432px; padding-top: 110px; padding-left: 100px;" src="" data-1x="imgs/s_01.png" data-2x="imgs/s_01@2x.png" />
             <div style="display: inline-block; width: 356px; height: 330px; overflow: hidden;">
-                <video style="margin: 15px; width: 356px; height: 330px;" preload loop autobuffer autoplay muted>
+                <video id="v1" style="margin: 15px; width: 356px; height: 330px;" preload loop autobuffer autoplay muted>
                     <source id="mp4" src="imgs/s_a0.mp4" type="video/mp4">
                 </video>
             </div>
             <div style="display: inline-block; width: 436px; height: 440px; overflow: hidden;">
-                <video style="margin: 25px;" preload loop autobuffer autoplay muted>
+                <video id="v2" style="margin: 25px;" preload loop autobuffer autoplay muted>
                     <source id="mp4" src="imgs/s_a2.mp4" type="video/mp4">
                 </video>
             </div>
             <div style="display:inline-block; width: 480px; height: 312px; overflow: hidden;">
-                <video style="margin: 10px; width: 480px; height: 312px;" preload loop autobuffer autoplay muted>
+                <video id="v3" style="margin: 10px; width: 480px; height: 312px;" preload loop autobuffer autoplay muted>
                     <source id="mp4" src="imgs/s_a5.mp4" type="video/mp4">
                 </video>
             </div>
             <div style="display:inline-block; width: 316px; height: 298px; overflow: hidden;">
-                <video style="margin: 15px;" preload loop autobuffer autoplay muted>
+                <video id="v4" style="margin: 15px;" preload loop autobuffer autoplay muted>
                     <source id="mp4" src="imgs/s_a3.mp4" type="video/mp4">
                 </video>
             </div>
             <div style="display:inline-block;  width: 620px; height: 104px;">
-                <video style="margin: 15px;" preload loop autobuffer autoplay muted>
+                <video id="v5" style="margin: 15px;" preload loop autobuffer autoplay muted>
                     <source id="mp4" src="imgs/s_a4.mp4" type="video/mp4">
                 </video>
             </div>
