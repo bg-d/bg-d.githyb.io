@@ -1,0 +1,800 @@
+<html>
+    <head>
+        <style>
+ 
+            *x {
+                outline: 1px solid rgba(0,0,0,0.5);
+            }
+            
+            ::selection {
+                color: #ffffff;
+                background: #8D8E9C;
+            }
+            
+            img {
+                user-select: none;
+                -webkit-user-select: none;                
+                pointer-events: none;
+            }
+            
+            textarea::-webkit-input-placeholder {
+                color: #B4B4BE;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            }            
+            textarea:focus::-webkit-input-placeholder { color: transparent; transform: translateY(-10px); }
+            textarea::-moz-placeholder {
+                color: #B4B4BE;
+                font-family: 'Inter UI', 'Work Sans', sans-serif;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            } 
+            textarea:focus::-moz-placeholder { color: transparent; } 
+            textarea:focus:-ms-input-placeholder { color: transparent; }         
+            
+            a {
+                color: #8D8E9C;
+                text-decoration: none;
+                padding-bottom: 2px;
+                border-bottom: 2px solid #B4B4BE;
+                font-weight: 500;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            }
+            
+            a:hover {
+              color: #4E4C5F; 
+              border-bottom: 2px solid #4E4C5F;    
+            }
+            
+            body {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                align-items: center; 
+                flex-direction: column;
+                font-family: 'Inter UI', 'Work Sans', sans-serif;  
+                -webkit-font-smoothing: antialiased; 
+                -moz-osx-font-smoothing: grayscale;
+                box-sizing: border-box;
+            }
+            
+            
+            .inner-wrapper {              
+                display: flex;
+                justify-content: center;
+                width: 960px;            
+            }
+            
+            .card-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100%;
+                margin: 80px 0;
+            }
+            
+            .card {
+                display: flex;
+                flex-direction: column;
+                width: 260px;
+                height: 550px;    
+            }
+            
+            .card img {
+                align-self: flex-start;
+            }
+            
+            .card h1 {
+                font-size: 21px;
+                color: #343D47;  
+                padding: 0;
+                margin: 0;   
+                margin-bottom: 10px;
+                margin-top: 30px;
+                font-weight: 500;
+            }
+            
+            .card p {
+                font-size: 18px;
+                color: #56576C;
+                line-height: 28px;
+                font-weight: normal;
+                padding: 0;
+                margin: 0;
+            }   
+            
+            .card span {
+                color: #B8BCC8;
+            }
+            
+            .card ul {
+                list-style: none;
+                font-size: 18px;
+                color: #8D8E9C;
+                margin: 0;
+                padding: 0;
+                margin-top: 28px;                
+            }
+            
+            .card ul li {
+                margin-bottom: 8px;
+            }   
+            
+            .card ul li:before {
+                position: relative;
+                content: url('icon-list-check.svg');
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                bottom: -2px;
+                user-select: none;
+                -webkit-user-select: none;                  
+            }          
+            
+            .button-quote {
+                align-self: flex-start;
+                margin-top: auto;
+                color: #fff;
+                padding: 13px 14px;
+                background: #8D8E9C;
+                border-radius: 6px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+                user-select: none;
+                -webkit-user-select: none;                 
+            }
+            
+            .button-quote:hover {
+                background: #767784;
+                padding: 13px 22px;
+            }      
+            
+            .button-quote:after {
+               position: relative;
+                content: url('icon-button-arrow.svg');
+                width: 15px;
+                height: 15px;
+                margin-left: 10px;
+                bottom: -3px;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);               
+            }       
+            
+            
+            .button-submit {
+                font-family: inherit;
+                font-size: 18px;                
+                align-self: flex-start;
+                color: #fff;
+                padding: 12px 14px;
+                background: #77C12A;
+                border-radius: 6px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+                user-select: none;
+                -webkit-user-select: none; 
+                outline-width: 0;
+                -webkit-appearance: none;
+                border: none;
+                outline: none;
+            }
+            
+            .button-submit:hover {
+                background: #66A623;
+                padding: 12px 22px;
+            }      
+            
+            .button-submit:after {
+               position: relative;
+                content: url('icon-button-arrow.svg');
+                width: 15px;
+                height: 15px;
+                margin-left: 10px;
+                bottom: -2px;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);               
+            } 
+            
+            .button-add-file {
+                color: #FFF;
+                padding: 12px 14px;
+                background: #8D8E9C;
+                border-radius: 6px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+                user-select: none;
+                -webkit-user-select: none;   
+                margin-left: 15px;
+            }
+            
+            .button-add-file:hover {
+                background: #767784;
+            }              
+            
+            .contact-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 180px;                
+            }
+            
+            .contact-wrapper .sides {
+                display: flex;
+                width: 100%;
+                margin-top: 70px;
+            }            
+             
+            .contact-wrapper .content {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .contact-wrapper .content h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 55px;
+                color: #4E4C5F;
+                margin-top: 80px;
+                font-weight: 900;
+            }        
+            
+            .contact-wrapper .content .sides .side-left {
+               width: 500px;
+               display: flex;
+               flex-direction: column;
+            }   
+            
+           .contact-wrapper .content .sides .side-left .benefit {
+               display: flex;
+               flex-direction: row;
+               margin-bottom: 40px;               
+            }             
+            
+            .contact-wrapper .content .sides .side-left .benefit img {
+                 align-self: flex-start;
+            }    
+                      
+            
+           .contact-wrapper .content .sides .side-left .benefit .info {
+               display: flex;
+               flex-direction: column;
+               width: 300px;
+               margin-left: 20px;
+            }             
+            
+           .contact-wrapper .content .sides .side-left .benefit .info h1 {
+                padding: 0;
+                margin: 0;                 
+                font-size: 21px;
+                color: #343D47; 
+                font-weight: 500;
+            } 
+            
+           .contact-wrapper .content .sides .side-left .benefit .info p {
+                padding: 0;
+                margin: 0;    
+                margin-top: 5px;
+                font-size: 18px;
+                color: #8D8E9C; 
+                font-weight: normal;     
+                line-height: 28px;               
+            }         
+            
+            .contact-wrapper .content .sides .side-right {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            }
+            
+           .contact-wrapper .content .sides .side-right .field {
+               display: flex;
+               flex-direction: column;
+               margin-bottom: 30px;
+            } 
+            
+           .contact-wrapper .content .sides .side-right .field input {
+                height: 45px;
+                -webkit-appearance: none;
+                border: none;
+                outline: none;
+                box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 1px 3px 0 rgba(40,30,63,0.14);
+                border-radius: 4px; 
+                margin-top: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 18px;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            }  
+            
+           .contact-wrapper .content .sides .side-right .field input:focus {
+               box-shadow: 0 0 0 1px #8D8E9C, 0 1px 3px 0 rgba(40,30,63,0.14), inset 0 0 0 2px rgba(141, 142, 146, 0.25);
+               outline-width: 0;
+               border: none;
+               outline: none;
+            }     
+            
+        
+            
+          .contact-wrapper .content .sides .side-right .field textarea {
+               height: 140px;
+               resize: none;
+                -webkit-appearance: none;
+                border: none;
+                 outline: none;
+                box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 1px 3px 0 rgba(40,30,63,0.14);
+                border-radius: 4px; 
+                margin-top: 5px;
+                padding: 10px;
+                padding: 12px 10px 10px 10px;
+                font-size: 18px;
+                transition: all 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            }  
+        
+        
+            
+           .contact-wrapper .content .sides .side-right .field textarea:focus {
+               box-shadow: 0 0 0 1px #8D8E9C, 0 1px 3px 0 rgba(40,30,63,0.14), inset 0 0 0 2px rgba(141, 142, 146, 0.25);
+               outline-width: 0;
+               border: none;
+               outline: none;
+               height: 140px;
+            }   
+            
+           .contact-wrapper .content .sides .side-right .field .empty {
+               height: 45px;
+            }             
+            
+            
+            .dummy-input-div {
+                height: 45px;
+                box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 1px 3px 0 rgba(40,30,63,0.14);
+                border-radius: 4px; 
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 18px;
+                line-height: 45px;
+                color: #4E4C5F;
+                overflow: hidden;   
+                flex: 1;
+            }
+            
+           
+            
+            
+           .contact-wrapper .content .sides .side-right .field label {
+               color: #8D8E9C;
+               font-size: 18px;
+            }               
+            
+            
+            
+            .team-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                background: #5129A5;            
+            }
+            
+            .team-wrapper .content {
+                display: flex;
+                justify-content: flex-end; 
+                width: 100%;
+                margin: 80px 0;
+            }
+            
+            .team-wrapper .content .hero {
+                margin-right: 100px;
+            }    
+            
+            .team-wrapper .content .side-left {
+                displayx: none;
+            }              
+            
+            .team-wrapper .content .side-right {
+                display: flex;
+                flex-direction: column;
+            }   
+            
+            .team-wrapper .content .side-right h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 55px;
+                color: #FFF;
+                font-weight: 900;
+            }    
+            
+            .team-wrapper .content .side-right span {
+                margin: 0;
+                padding: 0;
+                font-size: 55px;
+                color: #FFF;
+                font-weight: 900;
+            }              
+            
+            .team-wrapper .content .side-right span:after {
+                content: "AND DESIGN";
+                position: absolute;
+                transform: translateX(-79px) translateY(59px);
+                font-size: 13px;
+                opacity: 0.5;
+                font-weight: 600;
+            }               
+            
+            
+           .team-wrapper .content .side-right .benefits-list {
+               display: flex;
+               flex-direction: column;
+               margin-top: 70px;
+            }             
+            
+           .team-wrapper .content .side-right .benefit {
+               display: flex;
+               flex-direction: row;
+               margin-bottom: 40px;               
+            } 
+            
+            .team-wrapper .content .side-right .benefit img {
+               align-self: flex-start;
+            }                
+            
+            .team-wrapper .content .side-right .benefit .info {
+               display: flex;
+               flex-direction: column;
+               width: 440px;
+               margin-left: 20px;
+            }             
+            
+           .team-wrapper .content .side-right .benefit .info h1 {
+                padding: 0;
+                margin: 0;                 
+                font-size: 21px;
+                color: #FFF; 
+                font-weight: 500;
+            } 
+            
+            .team-wrapper .content .side-right .benefit .info p {
+                padding: 0;
+                margin: 0;    
+                margin-top: 5px;
+                font-size: 18px;
+                color: #DECEFF; 
+                font-weight: normal;     
+                line-height: 28px;               
+            }             
+            
+            
+            .benefits-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                background: #F5F7F9;
+            }
+             
+            .benefits-wrapper .content {
+                display: flex;
+                flex-direction: column;
+                align-content: flex-start;
+                width: 100%; 
+                margin: 80px 0;                
+            }
+            
+            .benefits-wrapper .content h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 55px;
+                color: #4E4C5F;
+                font-weight: 900;
+            }
+            
+            .benefits-wrapper .content .sides {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-top: 70px;
+            }            
+            
+           .benefits-wrapper .content .sides .side-left {
+               display: flex;
+               flex-direction: column;
+            }   
+            
+           .benefits-wrapper .content .sides .side-left .benefit {
+               display: flex;
+               flex-direction: row;
+               margin-bottom: 40px;               
+            }             
+            
+            .benefits-wrapper .content .sides .side-left .benefit img {
+                 align-self: flex-start;
+            }    
+            
+            
+            .benefits-wrapper .content .sides .side-right {
+                xbackground: url(image-benefits-bg.png);
+                xbackground-size: cover;
+                xbackground-position: bottom;
+                backgroundx: red;
+            }
+            
+            .benefits-wrapper .content .sides .side-right img {
+                margin-top: 30px;
+                margin-left: 130px;
+            }                
+            
+            
+  
+            .benefits-wrapper .content .sides .side-left .button-quote {
+                 margin-top: 40px;
+            }  
+            
+           .benefits-wrapper .content .sides .side-left .benefit .info {
+               display: flex;
+               flex-direction: column;
+               width: 440px;
+               margin-left: 20px;
+            }             
+            
+           .benefits-wrapper .content .sides .side-left .benefit .info h1 {
+                padding: 0;
+                margin: 0;                 
+                font-size: 21px;
+                color: #343D47; 
+                font-weight: 500;
+            } 
+            
+           .benefits-wrapper .content .sides .side-left .benefit .info p {
+                padding: 0;
+                margin: 0;    
+                margin-top: 5px;
+                font-size: 18px;
+                color: #8D8E9C; 
+                font-weight: normal;     
+                line-height: 28px;               
+            }              
+            
+
+            
+            
+            .hero-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background: #FC9816;
+                background: url(sk-bg.svg);
+                background-size: cover;
+                background-position: bottom;
+                width: 100vw;
+            }
+            
+            .hero-wrapper .content { 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 40px 0 60px 0;
+            }
+        
+            .hero-wrapper h1 {
+                padding: 0;
+                margin: 0;
+                font-size: 55px;
+                font-weight: 900;
+                line-height: 65px;
+                text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                text-align: center;            
+                color: #FFF;
+                max-width: 800px;
+                margin-top: 20px;
+            }
+
+            .hero-wrapper p {
+                padding: 0;
+                margin: 0;                
+                color: #FFF;
+                font-size: 23px;
+                text-align: center;             
+                opacity: 0.8;
+                margin-top: 20px;
+            }
+
+            .hero-wrapper img {
+                width: 768px;
+                max-width: 100%;
+            }            
+            
+        </style>
+        
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>     
+            $(document).on('click', '.button-quote', function () {
+                    $('html, body').animate({
+                        scrollTop: $(".contact-wrapper").offset().top
+                    }, 1000);
+                return false;
+            }); 
+            
+            $(document).on('change', '#file', function () {
+                $("#file-name").text($('#file')[0].files[0].name);
+            });             
+        </script>
+    </head>
+    <body>
+        <div class="hero-wrapper">
+            <div class="inner-wrapper">
+                <div class="content">
+                    <img src="header-logo-2x.png">
+                    <h1>We easily convert your Sketch
+                        design into perfect Web Page</h1>
+                    <p>Pssst... We also worked with Photoshop PSD and XD as well!</p> 
+                </div>
+            </div>        
+        </div> 
+        
+        <!-- Sketch<span>/</span>PSD<span>/</span>XD to HTML -->
+        <div class="inner-wrapper">
+            <div class="card-wrapper">
+                <div class="card">
+                    <img src="icon-service-web.svg">
+                    <h1>Sketch to HTML</h1>
+                    <p>We convert your designs into quality checked web pages thoroughly tested in all modern browsers.</p>
+                    <ul>
+                        <li>Pixel perfect</li>
+                        <li>CSS3 and HTML5</li>
+                        <li>Mobile friendly</li>
+                        <li>Responsive</li>
+                        <li>Bootstrap</li>
+                        <li>SASS and LESS</li>
+                        <li>Retina</li>
+                    </ul>
+                    <div class="button-quote">Get a Free Quote</div>
+                </div>
+
+                <div class="card">
+                    <img src="icon-service-wordpress.svg">
+                    <h1>Sketch to Wordpress</h1>
+                    <p>We convert you designs into tailor&#x2011;made themes. We deliver a powerful, beauty website with power and flexibility.</p>
+                    <ul>
+                        <li>Wordpress Themes</li>
+                        <li>WooCommerce Integration</li>
+                        <li>Custom Plugins</li>
+                    </ul>
+                    <div class="button-quote">Get a Free Quote</div>
+                </div>  
+
+                <div class="card">
+                    <img src="icon-service-email.svg">
+                    <h1>Sketch to Email</h1>
+                    <p>Our team can take any designs you want and turn it into a high quality email for your newsletter or sales emails.</p>
+                    <ul>
+                        <li>HTML</li>
+                        <li>Responsive</li>
+                        <li>Mailchimp</li>
+                        <li>Campaign Monitor</li>
+                    </ul>
+                    <div class="button-quote">Get a Free Quote</div>
+                </div>             
+            </div>          
+        </div>            
+            
+        <div class="benefits-wrapper">
+            <div class="inner-wrapper">            
+                <div class="content">
+                    <h1>On Time, on Budget and on Quality!</h1>
+                    <div class="sides">
+                        <div class="side-left">
+                            <div class="benefit">
+                                <img src="icon-benefit-quote.svg">
+                                <div class="info">
+                                    <h1>Get a Fast, Free Quote!</h1>
+                                    <p>Fill out the form to get your quote within 12 hours.
+                                        We offer a turnaround time that is the best suited to your need. Always on time.</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <img src="icon-benefit-budget.svg">
+                                <div class="info">
+                                    <h1>What is your Budget?</h1>
+                                    <p>We offers budget friendly service, affordable for everyone. No compromises on the level of service or quality of the work.</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <img src="icon-benefit-details.svg">
+                                <div class="info">
+                                    <h1>Attention to Details</h1>
+                                    <p>We always create pixel-perfect, cross-browser and device tested solutions.</p>
+                                </div>
+                            </div>                        
+                            <div class="button-quote">Get a Free Quote</div>
+                        </div>    
+                        <div class="side-right">
+                            <img width=463 src="img-hero.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team-wrapper">
+            <div class="inner-wrapper">            
+                    <div class="content">
+                        <div class="side-left">
+                            <img class="hero" width=510 src="img-hero-2.png">
+                        </div>
+                        <div class="side-right">
+                            <h1>We are a small <span>development</span> team</h1>
+                            <div class="benefits-list">
+                                <div class="benefit">
+                                    <img src="icon-team-about.svg">
+                                    <div class="info">
+                                        <h1>We are using Sketch on daily basis</h1>
+                                        <p>We are masters at using Sketch. As a designers ourselves, we closely relate to pain-points in designer workflow and look forward to solve them.</p>
+                                    </div>
+                                </div>
+                                <div class="benefit">
+                                    <img src="icon-team-love.svg">
+                                    <div class="info">
+                                        <h1>Made with Love</h1>
+                                        <p>We love what we do and we put all our passion in every project. That is how the way we work.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="contact-wrapper">
+            <div class="inner-wrapper">
+                <div class="content">
+                    <h1>Get a Free Quote</h1>
+                    <div class="sides">            
+                        <div class="side-left">
+
+                            <div class="benefit">
+                                <img src="icon-contact-nda.svg">
+                                <div class="info">
+                                    <h1>Confidentiality</h1>
+                                    <p>NDA (Non-disclosure agreement) for all information you share with us, including artwork, contact information and client notes will remain confidential.</p>
+                                </div>
+                            </div>
+
+                            <div class="benefit">
+                                <img src="icon-contact-mail.svg">
+                                <div class="info">
+                                    <h1>Prefer email?</h1>
+                                    <p>No problem, just send us mail to
+                                            <a href="mailto:welcome@sketch.app">welcome@sketch.app</a><p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="side-right">
+                            <form style="display: flex; flex-direction: column;" action="" method="post">
+                                <div class="field"><label class="label" for="name">Your Name</label><input required id="name"></div>
+                                <div class="field"><label  class="label" for="email">Email</label><input required id="email"></div>                        
+                                <div class="field">
+                                    <label for="file">Design file
+                                    <div style="display: flex; margin-top: 5px;" class="upload-block">
+                                        <div id="file-name" class="dummy-input-div"></div>
+                                        <div class="button-add-file">Add File</div>
+                                        <input style="display:none;" class="file-upload" type="file" id="file">                                     
+                                        </div>
+                                    </label>    
+                                 </div>
+
+                                <div class="field"><label for="comments">Comments (optional)</label><textarea id="comments" placeholder="Feel free to include links to Dropbox etc."></textarea></div>  
+
+
+
+                                <button class="button-submit" type="submit">Send</button>
+
+                            </form>
+                        </div>                
+                    </div>
+                </div>
+            </div>
+        </div>            
+        
+    </body>
+</html>
